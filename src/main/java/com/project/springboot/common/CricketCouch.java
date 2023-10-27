@@ -9,18 +9,12 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class CricketCouch implements Couch{
-    @PostConstruct
-    public void doSomeStartUpStuff(){
-        System.out.println("Doing my starting stuffs.....");
-    }
 
+    public CricketCouch(){
+        System.out.println("In Constructor "+ getClass().getSimpleName());
+    }
     @Override
     public String getDailyWorkout() {
         return "Cricket Couch";
-    }
-
-    @PreDestroy
-    public void doSomeCleanUpStuff(){
-        System.out.println("Doing my cleaning stuffs.....");
     }
 }

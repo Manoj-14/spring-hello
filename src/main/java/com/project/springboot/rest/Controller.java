@@ -13,9 +13,6 @@ public class Controller {
 
     @Autowired
     public Controller(@Qualifier("cricketCouch") Couch couch){
-
-        System.out.println("In Constructor "+ getClass().getSimpleName());
-
         this.myCouch = couch;
     }
 
