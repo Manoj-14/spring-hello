@@ -10,25 +10,18 @@ import org.springframework.web.bind.annotation.RestController;
 public class Controller {
 
     private Couch myCouch;
-    private Couch anotherCouch;
 
     @Autowired
-    public Controller(@Qualifier("cricketCouch") Couch couch,@Qualifier("cricketCouch") Couch anotherCouch){
+    public Controller(@Qualifier("cricketCouch") Couch couch){
 
-        System.out.println("In Constructor"+ getClass().getSimpleName());
+        System.out.println("In Constructor "+ getClass().getSimpleName());
 
         this.myCouch = couch;
-        this.anotherCouch = anotherCouch;
     }
 
     @GetMapping("dailyWorkOut")
     public String dailyWorkOut(){
         return myCouch.getDailyWorkout();
-    }
-
-    @GetMapping("/check")
-    public String check(){
-        return "Comparing beans myCouch==anotherCouch "+ (myCouch==anotherCouch);
     }
 
 
