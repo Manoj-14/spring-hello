@@ -12,7 +12,7 @@ public class Controller {
     private Couch myCouch;
 
     @Autowired
-    public Controller(@Qualifier("baseBallCouch") Couch couch){
+    public Controller(Couch couch){
         this.myCouch = couch;
     }
 
